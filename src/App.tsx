@@ -1,19 +1,12 @@
 
 import { Routes } from './Routes';
-import { ThemeProvider, ThemeConsumer } from './globalStyles';
+import { Providers } from './providers'
 
 function App() {
   return (
-    <ThemeProvider>
-      <ThemeConsumer>
-        {props => (
-          <>
-            <button onClick={props.handleThemeMode}>Click</button>
-            <Routes />
-          </>
-        )}
-      </ThemeConsumer>
-    </ThemeProvider>
+    <Providers>
+      <Routes />
+    </Providers>
   )
 }
 
