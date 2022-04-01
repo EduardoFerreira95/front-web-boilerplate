@@ -52,6 +52,7 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     transition: all 0.50s linear;
   }
+  
   body {
     background: ${(props: CreateGlobalStyle) => props.theme.background};
     color: ${(props: CreateGlobalStyle) => props.theme.primary};
