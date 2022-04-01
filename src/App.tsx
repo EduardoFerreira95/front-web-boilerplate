@@ -1,12 +1,12 @@
-
 import { Routes } from './Routes';
-import { Providers } from './providers'
+import { ThemeProvider } from './globalStyles';
+
 
 function App() {
   return (
-    <Providers>
+    <ThemeProvider>
       <Routes />
-    </Providers>
+    </ThemeProvider>
   )
 }
 
