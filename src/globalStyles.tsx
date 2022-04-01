@@ -2,6 +2,23 @@ import { useContext, createContext, useState } from 'react';
 
 import { createGlobalStyle, ThemeProvider as Provider } from 'styled-components';
 
+export const theme = {
+  dark: {
+    background: '#1E0E62',
+    primary: '#F2F2F2',
+    secondary: '#482BE7',
+    third: '#E93A7D',
+    buttonLabel: '#F2F2F2',
+  },
+  light: {
+    background: '#F2F2F2',
+    primary: '#1E0E62',
+    secondary: '#25DAC5',
+    third: '#E93A7D',
+    buttonLabel: '#F2F2F2',
+  }
+}
+
 type Theme = {
   background: string;
   primary: string;
@@ -24,20 +41,8 @@ type CreateGlobalStyle = {
   theme: Theme;
 }
 
-function makeTheme(theme: ThemeMode): Theme {
-  return theme === 'light' ? {
-    background: '#F2F2F2',
-    primary: '#1E0E62',
-    secondary: '#25DAC5',
-    third: '#E93A7D',
-    buttonLabel: '#F2F2F2',
-  } : {
-    background: '#1E0E62',
-    primary: '#F2F2F2',
-    secondary: '#482BE7',
-    third: '#E93A7D',
-    buttonLabel: '#F2F2F2',
-  }
+function makeTheme(themeMode: ThemeMode): Theme {
+  return themeMode === 'light' ? theme.light : theme.dark;
 }
 
 const GlobalStyles = createGlobalStyle`
